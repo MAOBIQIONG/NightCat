@@ -111,9 +111,8 @@
       toUrl: function (pagename,flag) {
         var user = common.getObjStorage("userInfo");
         console.log("flag:"+flag);
-        console.log("common.isNull(user._id):"+common.isNull(user._id));
-        if( flag == true && common.isNull(user._id) == true ){
-          this.$router.push({name: 'login'})
+        if( flag == true || common.isNull(user._id) == true ){
+          this.$router.push({name:'login'})
         }else{
           this.$router.push({name: pagename})
         }
