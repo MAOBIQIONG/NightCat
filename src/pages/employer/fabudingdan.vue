@@ -290,8 +290,10 @@
             var data = response.data;
             if( data && data.code == 200 ){
               _self.$store.state.indexRefreshMark = 1;
-              _self.showToast("发布成功！");
-              _self.goback();
+            //   _self.showToast("发布成功！");
+                _self.toUrl('releaseSuccess');
+                
+            //   _self.goback();
             }else{
               _self.showToast("发布失败！");
             }

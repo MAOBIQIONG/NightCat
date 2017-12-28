@@ -34,6 +34,7 @@ import daizhifu from '@/pages/employer/daizhifu'
 import daijiaofu from '@/pages/employer/daijiaofu'
 import yiwancheng from '@/pages/employer/yiwancheng'
 import yijianhuisheng from '@/pages/employer/yijianhuisheng'
+import releaseSuccess from '@/pages/employer/releaseSuccess'
 import sjszxxq from '@/pages/designer/sjszx-xq'
 import shejishigerenzhongxin from '@/pages/designer/shejishigerenzhongxin'
 import xiugaigerenxinxi from '@/pages/designer/xiugaigerenxinxi'
@@ -64,6 +65,7 @@ import mineshouchang from '@/pages/my/mine-shouchang'
 import minewenda from '@/pages/my/mine-wenda'
 
 import pz from '@/pages/meow/pz'
+
 Vue.use(Router)
 
 Router.prototype.goBack = function () {
@@ -214,6 +216,11 @@ const routeArray = [
   { path: '/fabudingdan',
     name: 'fabudingdan',
     component: fabudingdan
+  },
+  {
+      path:'/releaseSuccess',
+      name:'releaseSuccess',
+      component: releaseSuccess
   },
   { path: '/myorderchuli',
     name: 'myorderchuli',
