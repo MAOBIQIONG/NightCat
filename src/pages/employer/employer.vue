@@ -10,10 +10,10 @@
     </div>
     <!--状态模块-->
     <div class="gu-mokuai">
-      <div class="dingdan"@click="toUrl('fabudingdan',true)">
+      <div class="dingdan" @click="toUrl('fabudingdan',true)">
         发 布 项 目
       </div>
-      <div class="shouchang"@click="toUrl('myorderchuli',true)">
+      <div class="shouchang" @click="toUrl('myorderchuli',true)">
         我 的 订 单
       </div>
     </div>
@@ -110,18 +110,21 @@
       },
       toUrl: function (pagename,flag) {
         var user = common.getObjStorage("userInfo");
+        console.log(user,user._id);
         console.log("flag:"+flag);
-        console.log("common.isNull(user._id):"+common.isNull(user._id));
-        if( flag == true && common.isNull(user._id) == true ){
-          this.$router.push({name: 'login'})
+        console.log(common.isNull(user._id));
+
+        if( common.isNull(user._id)){
+          this.$router.push({name:'login'})
         }else{
           this.$router.push({name: pagename})
         }
+        console.log(common.isNull(user._id) || flag);
       },
       getNameById(id){
         return common.getNameByTypeId(id);
       },
-      //智能排序
+      //智能排序    
       znbx(){
         var _self = this;
         _self.znpxMark = _self.znpxMark == true ? false : true;

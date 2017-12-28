@@ -234,7 +234,7 @@
   }
 </script>
 <style>
-  .vux-slider > .vux-swiper{
+  .vux-swiper{
     height: 100% !important;
     overflow:auto !important;
   }

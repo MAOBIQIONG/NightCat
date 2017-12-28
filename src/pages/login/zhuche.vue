@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <div class="header">
-      <div class="header-left"@click="goback"><img src="../../../static/images/back.png"/></div>
+      <div class="header-left" @click="goback"><img src="../../../static/images/back.png"/></div>
     </div>
     <div class="zc-piaoti">
       <span>欢迎注册成为夜猫会员</span>
@@ -9,13 +9,10 @@
     <div class="login-shuru">
       <p class="tishi"></p>
       <div class="ls-shouji">
-        <input type="text"class="shouji nicheng" placeholder="昵称"/>
+        <input type="text" class="shouji nicheng" placeholder="昵称" v-model="param.nickname" />
         <span class="del">×</span>
       </div>
-      <div class="ls-shouji">
-        <!--<div class="xmlx-left">-->
-          <!--<span>类型</span>-->
-        <!--</div>-->
+      <!-- <div class="ls-shouji">
         <div class="xmlx-right">
           <select class="xmlx-kuang">
             <option value="volvo">类型</option>
@@ -36,24 +33,32 @@
             <option value="audi">审图</option>
           </select>
         </div>
-      </div>
+      </div> -->
       <div class="ls-shouji">
-        <input type="text"class="shouji sjh" placeholder="手机号"/>
+        <input type="text" class="shouji sjh" placeholder="手机号" v-model="param.mobile_phone" />
         <span class="del">×</span>
       </div>
       <div class="ls-yanzheng">
-        <input type="text"class="yanzheng"maxlength="8" placeholder="验证码"/>
+        <input type="text" class="yanzheng" maxlength="8" placeholder="验证码" v-model="param.verifying_code" />
         <div class="dj-shuru"><span class="msgs">点击获取验证码</span></div>
       </div>
     </div>
-    <div class="log-btn"><span>下一步</span></div>
+    <div class="log-btn" @click="nextStep()"><span>下一步</span></div>
   </div>
 </template>
 
 <script>
   export default {
     data () {
-      return {
+      return { 
+        
+        param:{
+            nickname:null,
+            mobile_phone:null,
+            verifying_code:null
+        }
+        
+            
       }
     },
     mounted: function () {
@@ -162,7 +167,18 @@
             $('.tishi').text("");
           }
         })
-      }
+      },
+
+        nextStep(){
+            let param1 = [
+                {key:"nickname",value:this.param.nickname},
+                {key:"mobile_phone",value:this.param.mobile_phone},
+                {key:"verifying_code",value:this.param.verifying_code}
+            ]
+            // let storage = common.op_localStorage().getStorage();
+            common.op_localStorage().setArray(param1);
+            // console.log(storage);
+        }
     },
   }
 </script>
