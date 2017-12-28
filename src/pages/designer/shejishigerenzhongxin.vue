@@ -249,7 +249,12 @@
     }
   }
 </script>
-
+<style>
+  .vux-swiper{
+    height: 100% !important;
+    overflow:auto !important;
+  }
+</style>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   @import '../../assets/css/designer/sjsgeren.css';
