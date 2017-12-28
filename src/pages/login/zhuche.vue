@@ -12,7 +12,7 @@
         <input type="text" class="shouji nicheng" placeholder="昵称" v-model="param.nickname" />
         <span class="del">×</span>
       </div>
-      <!-- <div class="ls-shouji">
+      <div class="ls-shouji">
         <div class="xmlx-right">
           <select class="xmlx-kuang">
             <option value="volvo">类型</option>
@@ -33,7 +33,7 @@
             <option value="audi">审图</option>
           </select>
         </div>
-      </div> -->
+      </div>
       <div class="ls-shouji">
         <input type="text" class="shouji sjh" placeholder="手机号" v-model="param.mobile_phone" />
         <span class="del">×</span>

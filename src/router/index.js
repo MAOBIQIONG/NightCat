@@ -53,6 +53,7 @@ import tijiaoshenhe from '@/pages/designer/tijiaoshenhe'
 import anliexq from '@/pages/designer/anliexq'
 import tixianchenggong from '@/pages/designer/tixianchenggong'
 import renzhengchenggong from '@/pages/designer/renzhengchenggong'
+import competiteSuccess from '@/pages/designer/competiteSuccess'
 import set from '@/pages/my/set'
 import setnicheng from '@/pages/my/set-nicheng'
 import setnum from '@/pages/my/set-num'
@@ -123,6 +124,10 @@ const routeArray = [
   { path: '/renzhengchenggong',
     name: 'renzhengchenggong',
     component: renzhengchenggong
+  },
+  { path:'/competiteSuccess',
+    name:'competiteSuccess',
+    component: competiteSuccess
   },
   { path: '/tixianchenggong',
     name: 'tixianchenggong',
